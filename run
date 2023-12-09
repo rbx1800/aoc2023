@@ -1,0 +1,4 @@
+#!/bin/bash
+
+npx tsc && node ./dist/day"$1"/index.js
+
