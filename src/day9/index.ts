@@ -11,10 +11,8 @@ function predict(seq: number[], last: number, findFirst : boolean =false): numbe
         next.push(seq[idx+1]-seq[idx]);
     })
     let ll = findFirst ? next[0] :next[next.length-1];
-    if (findFirst) {
-        return last - predict(next,ll,findFirst);
-    }
-    return predict(next,ll,findFirst) + last;
+    let nextNumber = predict(next,ll,findFirst);
+    return (findFirst ? -(nextNumber) : nextNumber) + last
 }
 
 
